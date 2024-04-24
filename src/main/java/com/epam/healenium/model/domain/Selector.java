@@ -40,7 +40,7 @@ public class Selector {
     @Column(name = "locator", columnDefinition = "json")
     @JdbcTypeCode(SqlTypes.JSON)
     @Basic(fetch = FetchType.LAZY)
-    @ColumnTransformer(read = "locator::json")
+    @ColumnTransformer(read = "locator as JSON")
     private Locator locator;
 
     @Column(name = "command")

@@ -13,21 +13,21 @@ import javax.sql.DataSource;
 /**
  * Created by vsko on 12.04.16.
  */
-@Configuration
-@EnableConfigurationProperties(DataSourceProperties.class)
+//@Configuration
+//@EnableConfigurationProperties(DataSourceProperties.class)
 public class LiquibaseConfiguration {
 
-    private static final String DEFAULT_TEST_SCHEMA = "public";
-
-    @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.hikari")
-    public DataSource dataSource(DataSourceProperties dataSourceProperties) {
-        return DataSourceBuilder.create(dataSourceProperties.getClassLoader())
-            .type(HikariDataSource.class)
-            .driverClassName(dataSourceProperties.getDriverClassName())
-            .url(dataSourceProperties.getUrl())
-            .username(dataSourceProperties.getUsername())
-            .password(dataSourceProperties.getPassword())
-            .build();
-    }
+//    private static final String DEFAULT_TEST_SCHEMA = "public";
+//
+//    @Bean
+//    @ConfigurationProperties(prefix = "spring.datasource.hikari")
+//    public DataSource dataSource(DataSourceProperties dataSourceProperties) {
+//        return DataSourceBuilder.create(dataSourceProperties.getClassLoader())
+//            .type(HikariDataSource.class)
+//            .driverClassName(dataSourceProperties.getDriverClassName())
+//            .url(dataSourceProperties.getUrl())
+//            .username(dataSourceProperties.getUsername())
+//            .password(dataSourceProperties.getPassword())
+//            .build();
+//    }
 }
