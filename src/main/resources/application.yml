@@ -15,13 +15,13 @@ spring:
   output.ansi.enabled: DETECT
   jpa:
     properties.hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
+      dialect: org.hibernate.dialect.H2Dialect
       temp.use_jdbc_metadata_defaults: false
       jdbc.batch_size: 40
       order_inserts: true
     open-in-view: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
   datasource:
     url: jdbc:h2:mem:mydb

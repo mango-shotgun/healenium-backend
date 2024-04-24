@@ -37,8 +37,8 @@ public class Selector {
     @Column(name = "method_name")
     private String methodName;
 
-    @Column(name = "locator", columnDefinition = "json")
-    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "locator")
+    @JdbcTypeCode(SqlTypes.VARCHAR)
     @Basic(fetch = FetchType.LAZY)
     @ColumnTransformer(read = "locator as JSON")
     private Locator locator;

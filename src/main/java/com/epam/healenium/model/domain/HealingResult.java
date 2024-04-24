@@ -23,8 +23,8 @@ public class HealingResult {
     @SequenceGenerator(name = "healing_result_seq", sequenceName = "healing_result_seq", allocationSize = 1)
     private Integer id;
 
-    @Column(name = "locator", columnDefinition = "jsonb")
-    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "locator")
+    @JdbcTypeCode(SqlTypes.VARCHAR)
     @Basic(fetch = FetchType.LAZY)
     private Locator locator;
 

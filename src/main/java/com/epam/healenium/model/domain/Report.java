@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +29,8 @@ public class Report {
     @Column(name = "uid")
     private String uid;
 
-    @Column(name = "elements", columnDefinition = "jsonb")
+    @Column(name = "elements")
+    @JdbcTypeCode(SqlTypes.VARCHAR)
     @Basic(fetch = FetchType.LAZY)
     @Convert(converter = RecordWrapperConverter.class)
     private RecordWrapper recordWrapper = new RecordWrapper();
